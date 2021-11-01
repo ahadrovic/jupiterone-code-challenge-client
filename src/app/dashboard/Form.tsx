@@ -11,7 +11,11 @@ import {
 
 import styles from './Form.module.css';
 
-const Form = () => {
+type FormProps = {
+  onSubmit: () => void;
+};
+
+const Form = ({ onSubmit }: FormProps) => {
   return (
     <Box component="form" className={styles.formBox}>
       <Typography variant="h5" style={{ color: '#333333' }}>
@@ -26,7 +30,9 @@ const Form = () => {
             We'll never share your email.
           </FormHelperText>
         </FormControl>
-        <Button variant="outlined">Submit</Button>
+        <Button onClick={onSubmit} variant="outlined">
+          Submit
+        </Button>
       </div>
     </Box>
   );
