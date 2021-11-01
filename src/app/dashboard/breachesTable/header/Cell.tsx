@@ -1,5 +1,6 @@
-import { TableCell, TableSortLabel } from '@mui/material';
 import React from 'react';
+import { TableCell, TableSortLabel } from '@mui/material';
+
 import { IHeaderCell, Order } from '../../../../types/table';
 
 interface IProps<T> extends IHeaderCell<T> {
@@ -12,7 +13,7 @@ interface IHandlers<T> {
   ) => (event: React.MouseEvent<unknown>) => void;
 }
 
-export type CellProps<T> = IProps<T> & IHandlers<T>;
+type CellProps<T> = IProps<T> & IHandlers<T>;
 
 const Cell = <T,>({
   id,
@@ -20,14 +21,12 @@ const Cell = <T,>({
   order,
   orderBy,
   disableSort,
-  disablePadding,
   onSortClick,
 }: CellProps<T>) => {
   return (
     <TableCell
       align="left"
       key={id as string}
-      padding={disablePadding ? 'none' : 'normal'}
       sortDirection={orderBy === id ? order : false}
     >
       {disableSort && label}

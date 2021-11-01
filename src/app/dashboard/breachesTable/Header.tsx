@@ -28,8 +28,9 @@ const Header = <T,>({
   return (
     <TableHead>
       <TableRow>
-        {headerCells.map((cell) => (
+        {headerCells.map((cell, index) => (
           <HeaderCell
+            key={`header-cell-${index}`}
             {...cell}
             order={order}
             orderBy={orderBy}

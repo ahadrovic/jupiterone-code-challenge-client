@@ -1,4 +1,4 @@
-import { Order } from '../../types/table';
+import { CellProps, Order } from '../../types/table';
 
 export const allBrowserSort = <T>(
   array: readonly T[],
@@ -33,4 +33,16 @@ export const getComparator = <T>(
   return order === 'desc'
     ? (a, b) => descComparator<T>(a, b, orderBy)
     : (a, b) => -descComparator<T>(a, b, orderBy);
+};
+
+export const renderValue = <T>(value: CellProps<T>['value']) => {
+  if (Array.isArray(value)) return value.join(', ');
+  if (typeof value === 'boolean') return value ? 'Yes' : 'No';
+  if (typeof value === 'number') return value;
+  const stringVal = value as unknown as string;
+  if (Number.isNaN(Date.parse(stringVal))) return stringVal;
+  if (stringVal.split(':').length > 1) {
+    return new Date(stringVal).toLocaleString();
+  }
+  return new Date(stringVal).toLocaleDateString();
 };

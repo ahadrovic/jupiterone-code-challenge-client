@@ -4,6 +4,7 @@ import { TableRow, TableBody, TableCell } from '@mui/material';
 import { allBrowserSort, getComparator } from '../../helpers/table';
 
 import { IHeaderCell, Order } from '../../../types/table';
+import BodyCell from './body/Cell';
 
 type BodyProps<T> = {
   items: T[];
@@ -21,14 +22,9 @@ const Body = <T,>({ headerCells, items, order, orderBy }: BodyProps<T>) => {
     <TableBody>
       {sortedItems.map((row, index) => (
         <TableRow hover tabIndex={-1} key={`breach-row-${index}`}>
-          {headerCells.map((cell) => {
-            const value = row[cell.id];
-            return (
-              <TableCell>
-                {Array.isArray(value) ? value.join(', ') : value}
-              </TableCell>
-            );
-          })}
+          {headerCells.map((cell) => (
+            <BodyCell key={`cell-${cell.id}-${index}`} value={row[cell.id]} />
+          ))}
         </TableRow>
       ))}
     </TableBody>
