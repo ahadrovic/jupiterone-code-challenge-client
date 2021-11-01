@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/jupiterone-code-challenge-client/static/css/main.c81af041.chunk.css",
-    "main.js": "/jupiterone-code-challenge-client/static/js/main.60fbc363.chunk.js",
-    "main.js.map": "/jupiterone-code-challenge-client/static/js/main.60fbc363.chunk.js.map",
-    "runtime-main.js": "/jupiterone-code-challenge-client/static/js/runtime-main.e80c9290.js",
-    "runtime-main.js.map": "/jupiterone-code-challenge-client/static/js/runtime-main.e80c9290.js.map",
-    "static/js/2.9eefe140.chunk.js": "/jupiterone-code-challenge-client/static/js/2.9eefe140.chunk.js",
-    "static/js/2.9eefe140.chunk.js.map": "/jupiterone-code-challenge-client/static/js/2.9eefe140.chunk.js.map",
-    "static/js/3.e891140e.chunk.js": "/jupiterone-code-challenge-client/static/js/3.e891140e.chunk.js",
-    "static/js/3.e891140e.chunk.js.map": "/jupiterone-code-challenge-client/static/js/3.e891140e.chunk.js.map",
-    "index.html": "/jupiterone-code-challenge-client/index.html",
-    "static/css/main.c81af041.chunk.css.map": "/jupiterone-code-challenge-client/static/css/main.c81af041.chunk.css.map",
-    "static/js/2.9eefe140.chunk.js.LICENSE.txt": "/jupiterone-code-challenge-client/static/js/2.9eefe140.chunk.js.LICENSE.txt"
+    "main.css": "/my-app/static/css/main.c81af041.chunk.css",
+    "main.js": "/my-app/static/js/main.60fbc363.chunk.js",
+    "main.js.map": "/my-app/static/js/main.60fbc363.chunk.js.map",
+    "runtime-main.js": "/my-app/static/js/runtime-main.dcb99a44.js",
+    "runtime-main.js.map": "/my-app/static/js/runtime-main.dcb99a44.js.map",
+    "static/js/2.9eefe140.chunk.js": "/my-app/static/js/2.9eefe140.chunk.js",
+    "static/js/2.9eefe140.chunk.js.map": "/my-app/static/js/2.9eefe140.chunk.js.map",
+    "static/js/3.e891140e.chunk.js": "/my-app/static/js/3.e891140e.chunk.js",
+    "static/js/3.e891140e.chunk.js.map": "/my-app/static/js/3.e891140e.chunk.js.map",
+    "index.html": "/my-app/index.html",
+    "static/css/main.c81af041.chunk.css.map": "/my-app/static/css/main.c81af041.chunk.css.map",
+    "static/js/2.9eefe140.chunk.js.LICENSE.txt": "/my-app/static/js/2.9eefe140.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.e80c9290.js",
+    "static/js/runtime-main.dcb99a44.js",
     "static/js/2.9eefe140.chunk.js",
     "static/css/main.c81af041.chunk.css",
     "static/js/main.60fbc363.chunk.js"
