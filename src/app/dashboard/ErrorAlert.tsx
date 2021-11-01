@@ -10,7 +10,7 @@ type ErrorAlertProps = {
 export const ErrorAlert = ({ error }: ErrorAlertProps) => {
   return (
     <Alert severity="error">
-      <AlertTitle>
+      <AlertTitle sx={{ textAlign: 'left' }}>
         Error from server{' '}
         {error.statusCode && <span>(Code {error.statusCode})</span>}
       </AlertTitle>
