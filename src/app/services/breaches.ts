@@ -6,10 +6,10 @@ type GetBreachesRes = IAPIResonse<IBreach>;
 /** account is an email address */
 export const getBreaches = async (account: string): Promise<GetBreachesRes> => {
   try {
-    const url = `https://jupiterone-code-challenge-api.herokuapp.com/breahces?account=${encodeURIComponent(
+    const url = `https://jupiterone-code-challenge-api.herokuapp.com/breaches?account=${encodeURIComponent(
       account,
     )}`;
-    const response = await fetch(url);
+    const response = await fetch(url, { mode: 'no-cors' });
     return await response.json();
   } catch (error) {
     return {
