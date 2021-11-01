@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { Container } from '@mui/material';
-import Header from './screens/Header';
-import Dashboard from './screens/Dashboard';
+import Header from './app/Header';
+import Dashboard from './app/Dashboard';
 
 import styles from './App.module.css';
 
