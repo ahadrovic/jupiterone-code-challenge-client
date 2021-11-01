@@ -1,13 +1,14 @@
 import React from 'react';
-import Box from '@mui/material/Box';
+import Form from './dashboard/Form';
 
 import styles from './Dashboard.module.css';
 
 const Dashboard = () => {
   return (
-    <Box className={styles.dashboardBox}>
-      <span>Content will go here</span>
-    </Box>
+    <div className={styles.dashboardBox}>
+      <Form />
+      {/* TODO: Add table here */}
+    </div>
   );
 };
 
