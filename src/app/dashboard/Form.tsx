@@ -16,10 +16,11 @@ import { FormInputs } from '../../types/form';
 import styles from './Form.module.css';
 
 type FormProps = {
+  disabled?: boolean;
   onSubmit: (data: FormInputs) => void;
 };
 
-const Form = ({ onSubmit }: FormProps) => {
+const Form = ({ disabled, onSubmit }: FormProps) => {
   const {
     register,
     handleSubmit,
@@ -61,7 +62,7 @@ const Form = ({ onSubmit }: FormProps) => {
             </FormHelperText>
           )}
         </FormControl>
-        <Button type="submit" variant="outlined">
+        <Button type="submit" variant="outlined" disabled={disabled}>
           Submit
         </Button>
       </div>
