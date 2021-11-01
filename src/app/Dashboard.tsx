@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { Paper, Alert, AlertTitle } from '@mui/material';
+import { Paper, Alert } from '@mui/material';
 
 import Form from './dashboard/Form';
 import BreachesTable from './dashboard/BreachesTable';
