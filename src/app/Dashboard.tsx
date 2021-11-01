@@ -1,0 +1,30 @@
+import React, { useState } from 'react';
+import { Paper, Alert } from '@mui/material';
+
+import Form from './dashboard/Form';
+import BreachesTable from './dashboard/BreachesTable';
+
+import styles from './Dashboard.module.css';
+import { IBreach } from '../types/breaches';
+import { mockBreaches } from './constants/mockData';
+
+const Dashboard = () => {
+  // TODO: connect API
+  const [breaches, setBreaches] = useState<IBreach[] | undefined>();
+  return (
+    <Paper elevation={1} className={styles.dashboardBox}>
+      <Form
+        onSubmit={() => {
+          setBreaches(mockBreaches);
+        }}
+      />
+      {!!breaches && <br />}
+      {breaches?.length === 0 && (
+        <Alert severity="success">No breaches were found.</Alert>
+      )}
+      {!!breaches?.length && <BreachesTable breaches={breaches} />}
+    </Paper>
+  );
+};
+
+export default Dashboard;

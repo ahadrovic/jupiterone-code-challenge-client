@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo_white.png';
-import './App.css';
+import { Container } from '@mui/material';
 
-function App() {
+import Header from './app/Header';
+import Dashboard from './app/Dashboard';
+
+import styles from './App.module.css';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className={styles.appContainer}>
+      <Header />
+      <Dashboard />
+    </Container>
   );
-}
+};
 
 export default App;
