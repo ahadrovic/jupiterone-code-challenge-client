@@ -42,6 +42,7 @@ const Form = ({ onSubmit }: FormProps) => {
         <FormControl className={styles.formControl}>
           <InputLabel htmlFor="email">Email</InputLabel>
           <Input
+            size="small"
             error={!!errors.email}
             id="email"
             aria-describedby="helper-text"
