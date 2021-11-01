@@ -45,11 +45,18 @@ const Form = ({ onSubmit }: FormProps) => {
             error={!!errors.email}
             id="email"
             aria-describedby="helper-text"
-            {...register('email', { required: true })}
+            {...register('email', {
+              required: true,
+              pattern: {
+                // Taken from here: https://stackoverflow.com/questions/63000638/form-pattern-validation-with-react-hook-form
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: 'Invalid email address',
+              },
+            })}
           />
           {errors.email && (
             <FormHelperText id="helper-text" error={true}>
-              This field is required
+              {errors.email.message || 'Field is required.'}
             </FormHelperText>
           )}
         </FormControl>
