@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useMemo } from 'react';
-import { Box, Table, TableContainer, Typography } from '@mui/material';
+import { Alert, AlertTitle, Box, Table, TableContainer } from '@mui/material';
 
 import TableHeader from './breachesTable/Header';
 import TableBody from './breachesTable/Body';
@@ -33,9 +33,8 @@ const BreachesTable = ({ breaches }: BreachesTableProps) => {
 
   return (
     <Box>
-      <Typography variant="h5" component="div">
-        {titleText}
-      </Typography>
+      <Alert severity="warning">{titleText}</Alert>
+      <br />
       <TableContainer>
         <Table size="small" sx={{ minWidth: 800 }} aria-labelledby="tableTitle">
           <TableHeader<IBreach>

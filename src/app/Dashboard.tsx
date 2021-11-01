@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Paper from '@mui/material/Paper';
+import { Paper, Alert } from '@mui/material';
 
 import Form from './dashboard/Form';
 import BreachesTable from './dashboard/BreachesTable';
@@ -18,7 +18,11 @@ const Dashboard = () => {
           setBreaches(mockBreaches);
         }}
       />
-      {breaches?.length && <BreachesTable breaches={breaches} />}
+      {!!breaches && <br />}
+      {breaches?.length === 0 && (
+        <Alert severity="success">No breaches were found.</Alert>
+      )}
+      {!!breaches?.length && <BreachesTable breaches={breaches} />}
     </Paper>
   );
 };
