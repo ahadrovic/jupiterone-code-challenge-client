@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { IBreach } from '../../types/breaches';
-import { IAPIResonse, Error } from '../../types/services';
+import { IAPIResonse, Error as APIError, Result } from '../../types/services';
 
 type GetBreachesRes = IAPIResonse<IBreach>;
 
@@ -10,14 +10,16 @@ export const getBreaches = async (account: string): Promise<GetBreachesRes> => {
     const url = `https://jupiterone-code-challenge-api.herokuapp.com/breaches?account=${encodeURIComponent(
       account,
     )}`;
-    const { data: resData } = await axios.get<GetBreachesRes>(url);
-    if (resData?.error || !resData?.result) {
-      return { result: null, error: resData?.error };
+    const { data: result } = await axios.get<Result<IBreach>>(url);
+
+    if (!result) {
+      throw new Error('Could not fetch breaches');
     }
-    return { result: resData.result, error: null };
+
+    return { result: result, error: null };
   } catch (error) {
     return {
-      error: { message: (error as Error).message },
+      error: { message: (error as APIError).message },
       result: null,
     };
   }
