@@ -1,0 +1,12 @@
+.headerBox {
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerBox img,
+.headerBox span,
+.headerBox h3 {
+  margin: 0 8px;
+}
